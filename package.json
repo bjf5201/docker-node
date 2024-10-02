@@ -12,8 +12,9 @@
     "express": "^4.21.0",
     "pg": "^8.11.2",
     "sqlite3": "^5.1.2",
-    "uuid": "^9.0.0",
+    "uuid": "^9.0.1",
     "wait-port": "^1.1.0"
+
   },
   "resolutions": {
     "ansi-regex": "5.0.1"
