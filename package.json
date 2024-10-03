@@ -10,12 +10,18 @@
         "dev": "nodemon --inspect=0.0.0.0:9229 -L src/index.js"
     },
     "dependencies": {
-        "cz-emoji-conventional": "1.1.0",
         "express": "4.21.0",
         "pg": "^8.13.0",
         "sqlite3": "^5.1.7",
         "uuid": "^9.0.1",
         "wait-port": "^1.1.0"
+    },
+    "devDependencies": {
+        "cz-emoji-conventional": "1.1.0",
+        "cz-conventional-changelog": "3.3.0",
+        "jest": "^29.7.0",
+        "nodemon": "^3.1.7",
+        "prettier": "^2.8.8"
     },
     "resolutions": {
         "ansi-regex": "5.0.1"
@@ -26,12 +32,6 @@
         "useTabs": false,
         "semi": true,
         "singleQuote": true
-    },
-    "devDependencies": {
-        "cz-conventional-changelog": "3.3.0",
-        "jest": "^29.7.0",
-        "nodemon": "^3.1.7",
-        "prettier": "^2.8.8"
     },
     "config": {
         "commitizen": {
