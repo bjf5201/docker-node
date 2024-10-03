@@ -94,7 +94,7 @@ function AddItemForm({ onNewItem }) {
             <InputGroup className="mb-3">
                 <Form.Control
                     value={newItem}
-                    onChange={e => setNewItem(e.target.value)}
+                    onChange={(e) => setNewItem(e.target.value)}
                     type="text"
                     placeholder="New Item"
                     aria-describedby="basic-addon1"
