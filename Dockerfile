@@ -18,7 +18,7 @@ RUN corepack enable && corepack install -g pnpm@9.11.0
 ENV PORT=3000
 EXPOSE $PORT
 
-FROM base as dev
+FROM base AS dev
 # Create bind mounts for pnpm build files & create cache mount for pnpm and install pnpm dependencies
 RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=bind,source=pnpm-lock.yaml,target=pnpm-lock.yaml \
@@ -39,3 +39,12 @@ USER node
 COPY --chown=node:node . .
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["node", "src/index.js"]
+
+FROM base AS test
+RUN --mount=type=bind,source=package.json,target=package.json \
+    --mount=type=bind,source=pnpm-lock.yaml,target=pnpm-lock.yaml \
+    --mount=type=bind,source=.npmrc,target=.npmrc \
+    --mount=type=cache,id=pnpm,target=/.pnpm/store pnpm install --frozen-lockfile
+USER node
+COPY --chown=node:node . .
+RUN pnpm test
