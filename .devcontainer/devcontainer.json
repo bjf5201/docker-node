@@ -1,0 +1,16 @@
+{
+    "name": "Docker Node.js",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "target": "development"
+    },
+    "features": {},
+    "forwardPorts": [3000],
+    // "postCreateCommand": "pnpm dev",
+    "customizations": {
+        "settings": {
+            "terminal.integrated.shell.linux": "/bin/bash"
+        }
+    }
+}
