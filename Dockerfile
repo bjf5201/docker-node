@@ -17,7 +17,7 @@ RUN corepack enable && corepack install -g pnpm@9.11.0
 #default to 3000 for node, you can add 9229 and 9230 (tests) for debug
 ENV PORT=3000
 EXPOSE $PORT
-RUN --mount=type=bind, source=package.json,target=package.json \
+RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=bind,source=pnpm-lock.yaml,target=pnpm-lock.yaml \
     --mount=type=bind,source=.npmrc,target=.npmrc 
 
