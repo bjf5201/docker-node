@@ -19,7 +19,7 @@ ENV PORT=3000
 EXPOSE $PORT
 RUN --mount=type=bind, source=package.json,target=package.json \
     --mount=type=bind,source=pnpm-lock.yaml,target=pnpm-lock.yaml \
-    --mount=type=bind,source=.npmrc,target=.npmrc \
+    --mount=type=bind,source=.npmrc,target=.npmrc 
 
 FROM base AS dev
 # Create bind mounts for pnpm build files & create cache mount for pnpm and install pnpm dependencies
